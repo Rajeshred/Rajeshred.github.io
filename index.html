@@ -5,21 +5,47 @@
   <meta charset=utf-8>
   <meta name="google-site-verification" content="oy-XON23Z_Ye3uAtvIpHTI0EmvyurD68UsaOytqBFz4" />
   <title></title>
-  <link rel="stylesheet" href="stylesheets/style.css"></style>
+  <link rel="stylesheet" href="inline-test.css"></style>
   
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
   
-  <style>
-    h1 {
-     color: green; 
-    }
-  </style>
+
 </head>
 <body>
-  <custom-component>
-    <h1> This is heading 1 </h1>
-    <p> Description of the page - test SEO </p>
-  </custom-component>
+  <div id="app">
+    <gallery inline-template>
+      <div id="gallery">
+        <!-- Gallery main image -->
+        <div @click="toggleGrayscale()" class="gallery-item main" :class="displayImage.grayscale ? 'grayscale': ''">
+          <img ref="img" src="https://previews.123rf.com/images/leonidtit/leonidtit1509/leonidtit150900133/44978628-Majestic-view-on-turquoise-water-and-sunny-beams-in-the-Plitvice-Lakes-National-Park-Croatia-Stock-Photo.jpg">
+          <p ref="caption" v-html="displayImage.caption"></p>
+        </div>
+        <div id="thumbnail-wrap">
+            <!-- Gallery thumbnails -->
+            <gallery-item inline-template key="items0">
+              <div class="gallery-item current" :class="`${ item.isCurrent && 'current' }`" ref="item">
+                <img @click="showFullSize(item)" ref="img" src="https://picsum.photos/798/499">
+                <p ref="caption">Landscape</p>
+              </div>
+            </gallery-item>
+
+            <gallery-item inline-template key="items1">
+              <div class="gallery-item" :class="`${ item.isCurrent && 'current' }`" ref="item">
+                <img @click="showFullSize(item)" ref="img" src="https://picsum.photos/799/499">
+                <p ref="caption">Landscape 2</p>
+              </div>
+            </gallery-item>
+            <gallery-item inline-template key="items2">
+              <div class="gallery-item" :class="`${ item.isCurrent && 'current' }`" ref="item">
+                <img @click="showFullSize(item)" ref="img" src="https://picsum.photos/800/499" >
+                <p ref="caption">Landscape 3</p>
+              </div>
+            </gallery-item>
+      </div>
+      </div>
+    </gallery>
+  </div>
+  
+  <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+<script type="text/javascript" src="inline-test.js"></script>
 </body>
 </html>
