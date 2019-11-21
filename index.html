@@ -16,15 +16,18 @@
       <div id="gallery">
         <!-- Gallery main image -->
         <div @click="toggleGrayscale()" class="gallery-item main" :class="displayImage.grayscale ? 'grayscale': ''">
-          <img ref="img" src="https://previews.123rf.com/images/leonidtit/leonidtit1509/leonidtit150900133/44978628-Majestic-view-on-turquoise-water-and-sunny-beams-in-the-Plitvice-Lakes-National-Park-Croatia-Stock-Photo.jpg">
-          <p ref="caption" v-html="displayImage.caption"></p>
+          <picture class="vx-gallery left">
+          <img ref="img" src="https://picsum.photos/798/499">
+          <p class="caption" ref="caption" v-html="displayImage.caption"></p>
+            <picture>
         </div>
         <div id="thumbnail-wrap">
             <!-- Gallery thumbnails -->
             <gallery-item inline-template key="items0">
-              <div class="gallery-item current" :class="`${ item.isCurrent && 'current' }`" ref="item">
+              <div class="gallery-item current" :class="`${ item.isCurrent && 'current' }`" ref="item">     
                 <img @click="showFullSize(item)" ref="img" src="https://picsum.photos/798/499">
                 <p ref="caption">Landscape</p>
+                
               </div>
             </gallery-item>
 
