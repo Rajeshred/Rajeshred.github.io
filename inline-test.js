@@ -1,4 +1,8 @@
-
+// This is because of https://github.com/vuejs/vue/issues/5677
+const els = document.querySelectorAll('.gallery-item');
+for (i = 0; i < els.length; ++i) {
+  els[i].classList.remove('current');  
+}
 
 Vue.component('gallery', {
   data() {
