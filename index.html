@@ -12,7 +12,7 @@
 </head>
 <body>
   <div id="app">
-    <gallery >
+    <gallery inline-template>
       <div id="gallery">
         <!-- Gallery main image -->
         <div @click="toggleGrayscale()" class="gallery-item main" :class="displayImage.grayscale ? 'grayscale': ''">
@@ -23,7 +23,7 @@
         </div>
         <div id="thumbnail-wrap">
             <!-- Gallery thumbnails -->
-            <gallery-item  key="items0">
+            <gallery-item inline-template key="items0">
               <div class="gallery-item current" :class="`${ item.isCurrent && 'current' }`" ref="item">     
                 <img @click="showFullSize(item)" ref="img" src="https://picsum.photos/798/499">
                 <p ref="caption">Landscape</p>
@@ -31,13 +31,13 @@
               </div>
             </gallery-item>
 
-            <gallery-item key="items1">
+            <gallery-item inline-template key="items1">
               <div class="gallery-item" :class="`${ item.isCurrent && 'current' }`" ref="item">
                 <img @click="showFullSize(item)" ref="img" src="https://picsum.photos/799/499">
                 <p ref="caption">Landscape 2</p>
               </div>
             </gallery-item>
-            <gallery-item key="items2">
+            <gallery-item inline-template key="items2">
               <div class="gallery-item" :class="`${ item.isCurrent && 'current' }`" ref="item">
                 <img @click="showFullSize(item)" ref="img" src="https://picsum.photos/800/499" >
                 <p ref="caption">Landscape 3</p>
