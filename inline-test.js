@@ -5,7 +5,7 @@ for (i = 0; i < els.length; ++i) {
 }
 
 Vue.component('gallery', {
-  data() {
+  data: {
     return {
       items: [],
       displayImage:
@@ -50,7 +50,7 @@ Vue.component('gallery', {
 
 Vue.component('gallery-item', {
   props: ['loadDisplayImage'],
-  data() {
+  data: {
     return {
       item: {
         image: '',
