@@ -18,7 +18,7 @@
 </script>
 <body>
   <div id="app">
-    <gallery inline-template >
+    <gallery inline-template v-if=false>
       <div id="gallery">
         <!-- Gallery main image -->
         <div @click="toggleGrayscale()" class="gallery-item main" :class="displayImage.grayscale ? 'grayscale': ''">
