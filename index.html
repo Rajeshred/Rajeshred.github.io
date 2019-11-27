@@ -10,6 +10,12 @@
   
 
 </head>
+
+<script>
+  
+  var dataObj = {}
+  dataObj.text = "Landscape123"
+</script>
 <body>
   <div id="app">
     <gallery inline-template >
@@ -26,7 +32,7 @@
             <gallery-item inline-template key="items0">
               <div class="gallery-item current" :class="`${ item.isCurrent && 'current' }`" ref="item">     
                 <img @click="showFullSize(item)" ref="img" src="https://picsum.photos/798/499">
-                <p ref="caption">Landscape123</p>
+                <p ref="caption">{{dataObj.text}}</p>
                 
               </div>
             </gallery-item>
@@ -34,13 +40,13 @@
             <gallery-item inline-template key="items1">
               <div class="gallery-item" :class="`${ item.isCurrent && 'current' }`" ref="item">
                 <img @click="showFullSize(item)" ref="img" src="https://picsum.photos/799/499">
-                <p ref="caption">Landscape123</p>
+                <p ref="caption">{{dataObj.text}}</p>
               </div>
             </gallery-item>
             <gallery-item inline-template key="items2">
               <div class="gallery-item" :class="`${ item.isCurrent && 'current' }`" ref="item">
                 <img @click="showFullSize(item)" ref="img" src="https://picsum.photos/800/499" >
-                <p ref="caption">Landscape123</p>
+                <p ref="caption">{{dataObj.text}}</p>
               </div>
             </gallery-item>
       </div>
